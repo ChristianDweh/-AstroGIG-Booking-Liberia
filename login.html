@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | AstroGIG Booking Liberia</title>
+
+    <meta name="description"
+          content="Login to AstroGIG Booking Liberia to manage hotel bookings, reservations, hotel partnerships and your account.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #071b33;
+            --primary-light: #0d2d50;
+            --red: #e52b32;
+            --red-dark: #c91f28;
+            --white: #ffffff;
+            --light: #f5f7fa;
+            --gray: #667085;
+            --border: #dfe4ea;
+            --success: #159447;
+            --shadow: 0 20px 50px rgba(7, 27, 51, 0.15);
+        }
+
+        body {
+            font-family:
+                Inter,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(7, 27, 51, 0.95),
+                    rgba(7, 27, 51, 0.78)
+                ),
+                url("images/liberia-hotel.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            min-height: 100vh;
+            color: #172033;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 5%;
+            z-index: 10;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+
+            background: var(--red);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            font-size: 25px;
+            font-weight: 900;
+
+            box-shadow:
+                0 8px 20px rgba(229, 43, 50, 0.35);
+        }
+
+        .logo-icon span {
+            color: #ffd43b;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: .5px;
+        }
+
+        .logo-text small {
+            display: block;
+
+            font-size: 8px;
+            letter-spacing: 1.5px;
+
+            color: #ff5960;
+
+            margin-top: 3px;
+        }
+
+        .back-home {
+            color: white;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            padding: 10px 16px;
+
+            border: 1px solid rgba(255,255,255,.3);
+            border-radius: 8px;
+
+            transition: .3s;
+        }
+
+        .back-home:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* =========================
+           MAIN
+        ========================== */
+
+        .page {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 100px 20px 40px;
+        }
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 1050px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: white;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+        }
+
+        /* =========================
+           LEFT SIDE
+        ========================== */
+
+        .welcome-section {
+            position: relative;
+
+            padding: 55px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(7, 27, 51, .92),
+                    rgba(7, 27, 51, .78)
+                ),
+                url("images/liberia-hotel.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .welcome-section h1 {
+            font-size: 42px;
+            line-height: 1.15;
+
+            margin-bottom: 20px;
+        }
+
+        .welcome-section h1 span {
+            color: #ff4a52;
+        }
+
+        .welcome-section p {
+            color: #d7e1eb;
+
+            line-height: 1.7;
+
+            font-size: 15px;
+
+            max-width: 420px;
+        }
+
+        .features {
+            margin-top: 35px;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 16px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+
+            gap: 13px;
+
+            font-size: 14px;
+        }
+
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+
+            border-radius: 9px;
+
+            background: rgba(255,255,255,.12);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #ff5159;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           LOGIN FORM
+        ========================== */
+
+        .login-section {
+            padding: 50px 45px;
+
+            background: white;
+        }
+
+        .login-heading {
+            margin-bottom: 28px;
+        }
+
+        .login-heading h2 {
+            font-size: 30px;
+
+            color: var(--primary);
+
+            margin-bottom: 8px;
+        }
+
+        .login-heading p {
+            color: var(--gray);
+
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            color: #25334a;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+
+            left: 14px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #8a97a8;
+
+            font-size: 16px;
+        }
+
+        .form-control {
+            width: 100%;
+
+            height: 48px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 9px;
+
+            padding: 0 45px;
+
+            outline: none;
+
+            font-size: 14px;
+
+            color: #172033;
+
+            background: #fff;
+
+            transition: .25s;
+        }
+
+        .form-control:focus {
+            border-color: var(--red);
+
+            box-shadow:
+                0 0 0 3px rgba(229,43,50,.08);
+        }
+
+        .password-toggle {
+            position: absolute;
+
+            right: 13px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border: none;
+
+            background: transparent;
+
+            color: #718096;
+
+            cursor: pointer;
+
+            font-size: 15px;
+        }
+
+        .password-toggle:hover {
+            color: var(--red);
+        }
+
+        /* =========================
+           ROLE SELECTOR
+        ========================== */
+
+        .role-title {
+            margin-bottom: 9px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+        .roles {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 8px;
+
+            margin-bottom: 20px;
+        }
+
+        .role-option {
+            position: relative;
+        }
+
+        .role-option input {
+            position: absolute;
+
+            opacity: 0;
+        }
+
+        .role-label {
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            min-height: 72px;
+
+            padding: 8px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            color: #536176;
+
+            transition: .25s;
+        }
+
+        .role-label .role-icon {
+            font-size: 20px;
+
+            margin-bottom: 5px;
+        }
+
+        .role-option input:checked + .role-label {
+            border-color: var(--red);
+
+            color: var(--red);
+
+            background: rgba(229,43,50,.05);
+
+            box-shadow:
+                0 0 0 1px var(--red);
+        }
+
+        /* =========================
+           OPTIONS
+        ========================== */
+
+        .login-options {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 20px;
+
+            font-size: 12px;
+        }
+
+        .remember {
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: var(--gray);
+
+            cursor: pointer;
+        }
+
+        .remember input {
+            accent-color: var(--red);
+        }
+
+        .forgot {
+            color: var(--red);
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+        /* =========================
+           BUTTON
+        ========================== */
+
+        .login-button {
+            width: 100%;
+
+            height: 50px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: var(--red);
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            letter-spacing: .4px;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+            box-shadow:
+                0 8px 18px rgba(229,43,50,.20);
+        }
+
+        .login-button:hover {
+            background: var(--red-dark);
+
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 10px 22px rgba(229,43,50,.28);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        /* =========================
+           DIVIDER
+        ========================== */
+
+        .divider {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin: 24px 0;
+
+            color: #9aa4b2;
+
+            font-size: 11px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+
+            height: 1px;
+
+            background: var(--border);
+
+            flex: 1;
+        }
+
+        /* =========================
+           REGISTER
+        ========================== */
+
+        .register-text {
+            text-align: center;
+
+            color: var(--gray);
+
+            font-size: 13px;
+        }
+
+        .register-text a {
+            color: var(--red);
+
+            font-weight: 800;
+
+            text-decoration: none;
+        }
+
+        .register-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           SECURITY
+        ========================== */
+
+        .security-note {
+            margin-top: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            color: #7b8798;
+
+            font-size: 10px;
+        }
+
+        .security-note strong {
+            color: var(--success);
+        }
+
+        /* =========================
+           FORGOT MODAL
+        ========================== */
+
+        .modal {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0,0,0,.65);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            z-index: 100;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-box {
+            width: 100%;
+
+            max-width: 430px;
+
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            box-shadow: var(--shadow);
+
+            animation: modalIn .25s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-box h3 {
+            color: var(--primary);
+
+            margin-bottom: 8px;
+        }
+
+        .modal-box p {
+            color: var(--gray);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+        }
+
+        .modal-actions {
+            display: flex;
+
+            gap: 8px;
+        }
+
+        .modal-btn {
+            flex: 1;
+
+            padding: 11px;
+
+            border-radius: 8px;
+
+            border: none;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+        .modal-cancel {
+            background: #eef1f5;
+
+            color: #39475a;
+        }
+
+        .modal-submit {
+            background: var(--red);
+
+            color: white;
+        }
+
+        /* =========================
+           TOAST
+        ========================== */
+
+        .toast {
+            position: fixed;
+
+            right: 20px;
+            top: 20px;
+
+            background: var(--primary);
+
+            color: white;
+
+            padding: 13px 18px;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+
+            box-shadow: var(--shadow);
+
+            transform: translateX(150%);
+
+            transition: .35s;
+
+            z-index: 200;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .login-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-section {
+                display: none;
+            }
+
+            .login-section {
+                padding: 40px 30px;
+            }
+
+            .header {
+                padding: 16px 20px;
+            }
+
+            .back-home {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .page {
+                padding: 80px 12px 25px;
+            }
+
+            .login-section {
+                padding: 30px 20px;
+            }
+
+            .login-heading h2 {
+                font-size: 26px;
+            }
+
+            .roles {
+                grid-template-columns: 1fr;
+            }
+
+            .role-label {
+                flex-direction: row;
+
+                gap: 8px;
+
+                min-height: 48px;
+            }
+
+            .role-label .role-icon {
+                margin-bottom: 0;
+            }
+
+            .logo-text {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header class="header">
+
+    <div class="header-container">
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-icon">
+                A<span>★</span>
+            </div>
+
+            <div class="logo-text">
+                ASTROGIG
+                <small>BOOKING LIBERIA</small>
+            </div>
+
+        </a>
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     MAIN LOGIN
+========================== -->
+
+<main class="page">
+
+    <div class="login-wrapper">
+
+
+        <!-- LEFT SECTION -->
+
+        <section class="welcome-section">
+
+            <h1>
+                Welcome to
+                <span>AstroGIG Booking Liberia</span>
+            </h1>
+
+            <p>
+                Your trusted platform for discovering and booking
+                hotels across Liberia. Whether you're visiting
+                Monrovia, Ganta, Buchanan, Gbarnga or another
+                destination, find a comfortable place to stay.
+            </p>
+
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <span>
+                        Book verified hotels across Liberia
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ★
+                    </div>
+
+                    <span>
+                        Compare hotels, rooms and prices
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🔒
+                    </div>
+
+                    <span>
+                        Secure and convenient reservations
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🤝
+                    </div>
+
+                    <span>
+                        Hotels can partner with AstroGIG
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOGIN SECTION -->
+
+        <section class="login-section">
+
+            <div class="login-heading">
+
+                <h2>Login to your account</h2>
+
+                <p>
+                    Enter your credentials to continue.
+                </p>
+
+            </div>
+
+
+            <form id="loginForm">
+
+
+                <!-- ACCOUNT TYPE -->
+
+                <div class="role-title">
+                    Select account type
+                </div>
+
+                <div class="roles">
+
+                    <div class="role-option">
+
+                        <input
+                            type="radio"
+                            name="role"
+                            id="traveler"
+                            value="traveler"
+                            checked
+                        >
+
+                        <label
+                            for="traveler"
+                            class="role-label"
+                        >
+
+                            <span class="role-icon">
+                                👤
+                            </span>
+
+                            Traveler
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="role-option">
+
+                        <input
+                            type="radio"
+                            name="role"
+                            id="hotel"
+                            value="hotel"
+                        >
+
+                        <label
+                            for="hotel"
+                            class="role-label"
+                        >
+
+                            <span class="role-icon">
+                                🏨
+                            </span>
+
+                            Hotel Manager
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="role-option">
+
+                        <input
+                            type="radio"
+                            name="role"
+                            id="admin"
+                            value="admin"
+                        >
+
+                        <label
+                            for="admin"
+                            class="role-label"
+                        >
+
+                            <span class="role-icon">
+                                🛡️
+                            </span>
+
+                            AstroGIG Admin
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ✉
+                        </span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            class="form-control"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            class="form-control"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="togglePassword"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                    <span
+                        class="forgot"
+                        id="forgotPassword"
+                    >
+                        Forgot password?
+                    </span>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                    id="loginButton"
+                >
+                    LOGIN TO ACCOUNT
+                </button>
+
+            </form>
+
+
+            <div class="divider">
+                OR
+            </div>
+
+
+            <!-- REGISTER -->
+
+            <div class="register-text">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create an account
+                </a>
+
+            </div>
+
+
+            <!-- SECURITY -->
+
+            <div class="security-note">
+
+                🔒
+
+                <span>
+                    <strong>Secure Login</strong>
+                    · AstroGIG Booking Liberia
+                </span>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- =========================
+     FORGOT PASSWORD MODAL
+========================== -->
+
+<div
+    class="modal"
+    id="forgotModal"
+>
+
+    <div class="modal-box">
+
+        <h3>
+            Reset your password
+        </h3>
+
+        <p>
+            Enter your registered email address and
+            AstroGIG Booking Liberia will send instructions
+            for resetting your password.
+        </p>
+
+        <form id="resetForm">
+
+            <div class="form-group">
+
+                <label for="resetEmail">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="resetEmail"
+                    class="form-control"
+                    style="padding:0 13px"
+                    placeholder="you@example.com"
+                    required
+                >
+
+            </div>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="modal-btn modal-cancel"
+                    id="closeModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="modal-btn modal-submit"
+                >
+                    SEND RESET LINK
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     TOAST
+========================== -->
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+<script>
+
+    /*
+    ========================================
+    ASTROGIG BOOKING LIBERIA LOGIN SYSTEM
+    ========================================
+    */
+
+    const loginForm =
+        document.getElementById("loginForm");
+
+    const emailInput =
+        document.getElementById("email");
+
+    const passwordInput =
+        document.getElementById("password");
+
+    const togglePassword =
+        document.getElementById("togglePassword");
+
+    const loginButton =
+        document.getElementById("loginButton");
+
+    const toast =
+        document.getElementById("toast");
+
+
+    /* =========================
+       PASSWORD VISIBILITY
+    ========================== */
+
+    togglePassword.addEventListener(
+        "click",
+        function () {
+
+            if (
+                passwordInput.type === "password"
+            ) {
+
+                passwordInput.type = "text";
+
+                togglePassword.textContent = "🙈";
+
+            } else {
+
+                passwordInput.type = "password";
+
+                togglePassword.textContent = "👁";
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       TOAST FUNCTION
+    ========================== */
+
+    function showToast(message) {
+
+        toast.textContent = message;
+
+        toast.classList.add("show");
+
+        setTimeout(function () {
+
+            toast.classList.remove("show");
+
+        }, 3000);
+
+    }
+
+
+    /* =========================
+       LOGIN
+    ========================== */
+
+    loginForm.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+
+            const email =
+                emailInput.value.trim();
+
+            const password =
+                passwordInput.value.trim();
+
+
+            const selectedRole =
+                document.querySelector(
+                    'input[name="role"]:checked'
+                ).value;
+
+
+            if (!email || !password) {
+
+                showToast(
+                    "Please enter your email and password."
+                );
+
+                return;
+
+            }
+
+
+            /*
+            Demo authentication.
+
+            Replace this section with your
+            backend/API authentication when
+            Firebase, Supabase, PHP, Node.js,
+            Laravel, etc. is connected.
+            */
+
+
+            loginButton.disabled = true;
+
+            loginButton.textContent =
+                "AUTHENTICATING...";
+
+
+            setTimeout(function () {
+
+
+                const user = {
+
+                    name:
+                        email
+                            .split("@")[0]
+                            .replace(/[._-]/g, " ")
+                            .replace(
+                                /\b\w/g,
+                                letter =>
+                                    letter.toUpperCase()
+                            ),
+
+                    email: email,
+
+                    role: selectedRole,
+
+                    loginTime:
+                        new Date().toISOString()
+
+                };
+
+
+                /*
+                Store demo session.
+                */
+
+                localStorage.setItem(
+                    "astrogigCurrentUser",
+                    JSON.stringify(user)
+                );
+
+
+                /*
+                Remember login if selected.
+                */
+
+                const remember =
+                    document.getElementById(
+                        "remember"
+                    ).checked;
+
+
+                if (remember) {
+
+                    localStorage.setItem(
+                        "astrogigRememberMe",
+                        "true"
+                    );
+
+                } else {
+
+                    localStorage.removeItem(
+                        "astrogigRememberMe"
+                    );
+
+                }
+
+
+                showToast(
+                    "Login successful! Redirecting..."
+                );
+
+
+                /*
+                Role-based dashboard
+                */
+
+                let destination =
+                    "dashboard.html";
+
+
+                if (selectedRole === "hotel") {
+
+                    destination =
+                        "hotel-dashboard.html";
+
+                }
+
+
+                if (selectedRole === "admin") {
+
+                    destination =
+                        "admin.html";
+
+                }
+
+
+                setTimeout(function () {
+
+                    window.location.href =
+                        destination;
+
+                }, 900);
+
+
+            }, 1000);
+
+        }
+    );
+
+
+    /* =========================
+       FORGOT PASSWORD
+    ========================== */
+
+    const forgotPassword =
+        document.getElementById(
+            "forgotPassword"
+        );
+
+    const forgotModal =
+        document.getElementById(
+            "forgotModal"
+        );
+
+    const closeModal =
+        document.getElementById(
+            "closeModal"
+        );
+
+
+    forgotPassword.addEventListener(
+        "click",
+        function () {
+
+            forgotModal.classList.add("show");
+
+        }
+    );
+
+
+    closeModal.addEventListener(
+        "click",
+        function () {
+
+            forgotModal.classList.remove(
+                "show"
+            );
+
+        }
+    );
+
+
+    /*
+    Close modal by clicking outside.
+    */
+
+    forgotModal.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target === forgotModal
+            ) {
+
+                forgotModal.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       RESET PASSWORD
+    ========================== */
+
+    document
+        .getElementById("resetForm")
+        .addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const resetEmail =
+                    document.getElementById(
+                        "resetEmail"
+                    ).value.trim();
+
+
+                if (!resetEmail) {
+
+                    showToast(
+                        "Please enter your email."
+                    );
+
+                    return;
+
+                }
+
+
+                forgotModal.classList.remove(
+                    "show"
+                );
+
+
+                showToast(
+                    "Password reset instructions sent to " +
+                    resetEmail
+                );
+
+            }
+        );
+
+
+    /* =========================
+       AUTO LOGIN MESSAGE
+    ========================== */
+
+    const savedUser =
+        localStorage.getItem(
+            "astrogigCurrentUser"
+        );
+
+
+    const remembered =
+        localStorage.getItem(
+            "astrogigRememberMe"
+        );
+
+
+    if (
+        savedUser &&
+        remembered === "true"
+    ) {
+
+        try {
+
+            const user =
+                JSON.parse(savedUser);
+
+
+            emailInput.value =
+                user.email || "";
+
+
+            showToast(
+                "Welcome back, " +
+                (user.name || "User") +
+                "!"
+            );
+
+        } catch (error) {
+
+            localStorage.removeItem(
+                "astrogigCurrentUser"
+            );
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
