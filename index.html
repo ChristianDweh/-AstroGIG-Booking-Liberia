@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AstroGIG Booking Liberia - Find and book verified hotels, guesthouses and resorts across Liberia.">
+<title>AstroGIG Booking Liberia | Find Your Perfect Stay</title>
+<style>
+:root{--navy:#071b33;--navy2:#0d2948;--red:#e52b32;--red2:#c91f28;--text:#132238;--muted:#65758b;--bg:#f5f7fa;--white:#fff;--line:#e5e9ef;--shadow:0 12px 35px rgba(7,27,51,.10)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--bg);line-height:1.5}
+button,input,select{font:inherit} button{cursor:pointer;border:0}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{position:absolute;z-index:20;top:0;left:0;width:100%;color:white;background:rgba(4,22,42,.84);backdrop-filter:blur(12px)}
+.nav{height:68px;display:flex;align-items:center;gap:28px}
+.logo{display:flex;align-items:center;gap:9px;margin-right:auto}
+.logo-mark{font-size:38px;font-weight:900;line-height:1;color:#fff;transform:skew(-8deg)}
+.logo-mark span{color:var(--red)}
+.logo-text{font-size:20px;font-weight:800;line-height:1}.logo-text small{display:block;color:#ff3b42;font-size:10px;letter-spacing:.5px;margin-top:3px}
+.nav-links{display:flex;gap:25px;font-size:14px;font-weight:600}.nav-links a{padding:24px 0;position:relative}.nav-links a.active:after{content:"";position:absolute;height:2px;background:#fff;left:0;right:0;bottom:11px}
+.nav-actions{display:flex;gap:10px;align-items:center}.icon-btn,.ghost,.primary{border-radius:8px;padding:10px 17px}.icon-btn{background:transparent;color:#fff;font-size:18px}.ghost{border:1px solid #aab8c9;background:transparent;color:#fff}.primary{background:var(--red);color:#fff;font-weight:700}.primary:hover{background:var(--red2)}
+.menu{display:none;background:none;color:#fff;font-size:25px}
+.hero{min-height:520px;padding:150px 0 80px;color:white;background:linear-gradient(90deg,rgba(3,19,36,.88),rgba(3,19,36,.45)),url("https://images.unsplash.com/photo-1505881402582-c5bc11054f91?auto=format&fit=crop&w=1800&q=85") center/cover}
+.hero h1{font-size:clamp(40px,5vw,62px);line-height:1.05;max-width:610px;margin-bottom:14px}.hero p{font-size:18px;max-width:610px;color:#eef4fa}
+.search-box{margin-top:35px;background:#fff;color:var(--text);border-radius:12px;padding:12px;display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr auto;gap:8px;box-shadow:0 15px 40px rgba(0,0,0,.2)}
+.field{padding:9px 13px;border-right:1px solid var(--line)}.field label{display:block;font-size:11px;color:var(--muted);margin-bottom:3px}.field select,.field input{width:100%;border:0;outline:0;background:white;color:var(--text);font-weight:600}
+.search-btn{align-self:stretch;padding:0 25px;border-radius:8px;background:var(--red);color:#fff;font-weight:800}
+.trust{background:#fff;padding:25px 0}.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}.trust-item{display:flex;gap:12px;align-items:center}.trust-icon{font-size:25px}.trust-item b{font-size:13px}.trust-item p{font-size:11px;color:var(--muted)}
+section{padding:52px 0}.section-title{text-align:center;margin-bottom:28px}.section-title h2{font-size:28px}.section-title p{color:var(--muted);font-size:14px}
+.destinations{display:grid;grid-template-columns:repeat(7,1fr);gap:9px}.destination{height:112px;border-radius:9px;overflow:hidden;position:relative;background-size:cover;background-position:center;display:flex;align-items:flex-end}.destination:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(0,0,0,.8))}.destination div{position:relative;z-index:1;color:#fff;padding:12px;font-weight:700;font-size:13px}.destination small{display:block;font-weight:500;font-size:10px}
+.deal{border-radius:11px;overflow:hidden;min-height:140px;padding:28px;background:linear-gradient(90deg,#071b33 40%,rgba(7,27,51,.55)),url("https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1300&q=80") center/cover;color:#fff;display:flex;align-items:center;justify-content:space-between}.deal h2{font-size:23px;margin:5px 0}.deal p{font-size:13px;margin-bottom:14px}.deal-badge{font-size:20px;font-weight:900;background:var(--red);padding:16px;border-radius:50%;text-align:center}
+.hotels{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.hotel-card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.04)}.hotel-img{height:165px;background-size:cover;background-position:center;position:relative}.tag{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;padding:4px 8px;border-radius:5px;font-size:10px;font-weight:800}.heart{position:absolute;top:8px;right:9px;background:rgba(0,0,0,.25);color:#fff;width:32px;height:32px;border-radius:50%}.hotel-body{padding:13px}.hotel-body h3{font-size:16px}.location{font-size:11px;color:var(--muted);margin:2px 0 7px}.rating{font-size:12px;color:#f3a400}.rating span{color:var(--muted)}.amenities{display:flex;gap:8px;flex-wrap:wrap;font-size:10px;color:#425268;margin:9px 0}.price{font-size:12px;color:var(--muted)}.price strong{font-size:18px;color:var(--text)}.card-actions{display:flex;gap:7px;margin-top:10px}.card-actions button{flex:1;padding:8px;border-radius:6px;font-size:11px;font-weight:700}.view{background:#fff;border:1px solid #9aa7b8}.book{background:var(--red);color:#fff}
+.why{background:#edf3fa;border-radius:12px;padding:28px}.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}.why-item{text-align:center}.why-item i{font-size:30px;font-style:normal}.why-item b{display:block;font-size:13px;margin:7px 0}.why-item p{font-size:11px;color:var(--muted)}
+.partner{margin-top:18px;background:linear-gradient(100deg,#071b33,#0c2949);color:#fff;padding:28px;border-radius:11px;display:flex;align-items:center;justify-content:space-between}.partner h3{font-size:19px}.partner p{font-size:12px;color:#c8d5e3}
+footer{background:#061a31;color:#d9e3ee;padding:45px 0 18px}.footer-grid{display:grid;grid-template-columns:1.5fr repeat(4,1fr) 1.2fr;gap:30px}.footer-logo{margin-bottom:12px}.footer p,.footer a{font-size:11px;color:#aebdcd}.footer h4{color:#fff;font-size:13px;margin-bottom:12px}.footer a{display:block;margin:7px 0}.social{display:flex;gap:8px;margin-top:14px}.social a{width:28px;height:28px;border-radius:50%;background:#173250;display:grid;place-items:center;color:#fff}.copyright{border-top:1px solid #173250;margin-top:30px;padding-top:15px;display:flex;justify-content:space-between;font-size:10px;color:#91a2b6}
+.chat{position:fixed;right:22px;bottom:20px;width:50px;height:50px;border-radius:50%;background:#3168ff;color:#fff;font-size:22px;box-shadow:0 8px 25px rgba(49,104,255,.35);z-index:50}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-card{background:#fff;border-radius:14px;width:min(560px,100%);max-height:90vh;overflow:auto;padding:25px}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.close{background:#edf1f5;width:32px;height:32px;border-radius:50%}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-group{margin-bottom:12px}.form-group.full{grid-column:1/-1}.form-group label{font-size:12px;font-weight:700;display:block;margin-bottom:5px}.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:7px;outline:0}.form-group textarea{min-height:90px;resize:vertical}.notice{padding:12px;border-radius:8px;background:#eef7ff;color:#28547d;font-size:12px;margin-bottom:15px}
+.toast{position:fixed;right:20px;top:85px;background:#071b33;color:#fff;padding:13px 18px;border-radius:8px;z-index:200;transform:translateX(140%);transition:.3s;font-size:13px}.toast.show{transform:translateX(0)}
+@media(max-width:950px){.nav-links{display:none}.menu{display:block}.search-box{grid-template-columns:1fr 1fr}.search-btn{min-height:48px}.destinations{grid-template-columns:repeat(4,1fr)}.hotels{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.nav{height:62px}.logo-text{font-size:16px}.logo-mark{font-size:30px}.nav-actions .ghost{display:none}.hero{padding-top:120px;min-height:650px}.hero h1{font-size:40px}.search-box{grid-template-columns:1fr}.field{border-right:0;border-bottom:1px solid var(--line)}.trust-grid,.why-grid{grid-template-columns:1fr 1fr}.destinations{grid-template-columns:repeat(2,1fr)}.hotels{grid-template-columns:1fr}.deal{flex-direction:column;align-items:flex-start;gap:15px}.footer-grid{grid-template-columns:1fr 1fr}.copyright{flex-direction:column;gap:8px}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo" aria-label="AstroGIG Booking Liberia">
+      <div class="logo-mark">A<span>★</span></div>
+      <div class="logo-text">ASTROGIG<small>BOOKING LIBERIA</small></div>
+    </a>
+    <nav class="nav-links">
+      <a class="active" href="#home">Home</a><a href="#hotels">Hotels</a><a href="#destinations">Destinations</a><a href="#deals">Deals</a><a href="#about">About Us</a><a href="#partner">Become a Partner</a><a href="#help">Help</a>
+    </nav>
+    <div class="nav-actions"><button class="icon-btn" id="themeBtn">☾</button><button class="ghost" onclick="openModal('loginModal')">Login</button><button class="primary" onclick="openModal('registerModal')">Register</button><button class="menu" id="menuBtn">☰</button></div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <h1>Find Your Perfect Stay in Liberia</h1>
+    <p>Discover hotels, guesthouses and resorts across Liberia and book your stay with confidence.</p>
+    <form class="search-box" id="searchForm">
+      <div class="field"><label>Where are you going?</label><select id="destination"><option>Monrovia, Liberia</option><option>Paynesville, Liberia</option><option>Ganta, Liberia</option><option>Buchanan, Liberia</option><option>Gbarnga, Liberia</option><option>Kakata, Liberia</option></select></div>
+      <div class="field"><label>Check-in</label><input id="checkin" type="date"></div>
+      <div class="field"><label>Check-out</label><input id="checkout" type="date"></div>
+      <div class="field"><label>Guests</label><select id="guests"><option>2 Guests, 1 Room</option><option>1 Guest, 1 Room</option><option>3 Guests, 1 Room</option><option>4 Guests, 2 Rooms</option><option>5 Guests, 2 Rooms</option></select></div>
+      <button class="search-btn">SEARCH HOTELS</button>
+    </form>
+  </div>
+</section>
+
+<div class="trust"><div class="container trust-grid">
+  <div class="trust-item"><div class="trust-icon">🏆</div><div><b>Best Price Guarantee</b><p>We help you find competitive prices</p></div></div>
+  <div class="trust-item"><div class="trust-icon">🛡️</div><div><b>Trusted & Safe Booking</b><p>Secure booking and support</p></div></div>
+  <div class="trust-item"><div class="trust-icon">🏨</div><div><b>Wide Selection</b><p>Hotels across Liberia</p></div></div>
+  <div class="trust-item"><div class="trust-icon">⚡</div><div><b>Easy & Fast Booking</b><p>Book in just a few clicks</p></div></div>
+</div></div>
+
+<section id="destinations"><div class="container">
+  <div class="section-title"><h2>Popular Destinations in Liberia</h2><p>Explore the most visited cities and towns</p></div>
+  <div class="destinations">
+    <a class="destination" href="#hotels" style="background-image:url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=500&q=80')"><div>Monrovia<small>128 Hotels</small></div></a>
+    <a class="destination" href="#hotels" style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=500&q=80')"><div>Paynesville<small>34 Hotels</small></div></a>
+    <a class="destination" href="#hotels" style="background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=500&q=80')"><div>Ganta<small>18 Hotels</small></div></a>
+    <a class="destination" href="#hotels" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80')"><div>Buchanan<small>22 Hotels</small></div></a>
+    <a class="destination" href="#hotels" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80')"><div>Gbarnga<small>16 Hotels</small></div></a>
+    <a class="destination" href="#hotels" style="background-image:url('https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=500&q=80')"><div>Kakata<small>14 Hotels</small></div></a>
+    <a class="destination" href="#hotels" style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=500&q=80')"><div>More<small>View all</small></div></a>
+  </div>
+</div></section>
+
+<section id="deals" style="padding-top:0"><div class="container">
+  <div class="deal"><div><span class="tag" style="position:static;display:inline-block">LIMITED TIME OFFER</span><h2>Save up to 30% on your next stay</h2><p>Book early and save more on selected hotels across Liberia.</p><button class="primary" onclick="showToast('Deals are being loaded...')">EXPLORE DEALS</button></div><div class="deal-badge">UP TO<br>30%<br>OFF</div></div>
+</div></section>
+
+<section id="hotels" style="padding-top:5px"><div class="container">
+  <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:25px"><div><h2>Featured Hotels</h2><p style="font-size:13px;color:var(--muted)">Handpicked stays for your next trip</p></div><a href="#hotels" onclick="showToast('All hotels are coming soon')" style="font-weight:700;font-size:13px">View all hotels →</a></div>
+  <div class="hotels" id="hotelGrid"></div>
+</div></section>
+
+<section id="about"><div class="container">
+  <div class="why"><div class="section-title" style="margin-bottom:25px"><h2>Why Book With AstroGIG?</h2></div>
+  <div class="why-grid">
+    <div class="why-item"><i>🏨</i><b>Verified Hotels</b><p>Partner hotels are reviewed and verified by our team.</p></div>
+    <div class="why-item"><i>💳</i><b>Secure Payments</b><p>Your payment information is protected.</p></div>
+    <div class="why-item"><i>🎧</i><b>24/7 Support</b><p>We are here to help whenever you need us.</p></div>
+    <div class="why-item"><i>📋</i><b>Flexible Options</b><p>Find flexible cancellation options on selected stays.</p></div>
+  </div></div>
+  <div class="partner" id="partner"><div><h3>Are you a hotel owner?</h3><p>Partner with AstroGIG Booking Liberia and grow your business with us.</p></div><button class="ghost" onclick="openModal('partnerModal')">BECOME A PARTNER</button></div>
+</div></section>
+</main>
+
+<footer id="help"><div class="container">
+  <div class="footer-grid">
+    <div><div class="logo footer-logo"><div class="logo-mark">A<span>★</span></div><div class="logo-text">ASTROGIG<small>BOOKING LIBERIA</small></div></div><p>Your trusted platform for booking hotels, guesthouses and resorts across Liberia.</p><div class="social"><a href="#">f</a><a href="#">◎</a><a href="#">𝕏</a><a href="#">▶</a></div></div>
+    <div><h4>Quick Links</h4><a href="#home">Home</a><a href="#hotels">Hotels</a><a href="#destinations">Destinations</a><a href="#deals">Deals</a><a href="#about">About Us</a><a href="#help">Help Center</a></div>
+    <div><h4>Top Destinations</h4><a href="#hotels">Monrovia</a><a href="#hotels">Paynesville</a><a href="#hotels">Ganta</a><a href="#hotels">Buchanan</a><a href="#hotels">Gbarnga</a><a href="#hotels">Kakata</a></div>
+    <div><h4>For Travelers</h4><a href="#about">How It Works</a><a href="#about">Booking Guide</a><a href="#about">Payment Options</a><a href="#about">Cancellation Policy</a><a href="#about">Travel Tips</a></div>
+    <div><h4>For Partners</h4><a href="#partner">Become a Partner</a><a href="#partner">Partner Benefits</a><a href="#partner">Partner Login</a><a href="#partner">Resources</a><a href="#partner">Contact Us</a></div>
+    <div><h4>Contact Us</h4><p>☎ +231 77 123 4567</p><p>✉ info@astrogigbooking.lr</p><p>📍 Monrovia, Liberia</p><p>◷ Mon - Sun: 24/7</p></div>
+  </div>
+  <div class="copyright"><span>© 2026 AstroGIG Booking Liberia. All rights reserved.</span><span>Privacy Policy &nbsp;&nbsp; Terms of Service &nbsp;&nbsp; Sitemap</span></div>
+</div></footer>
+
+<button class="chat" onclick="showToast('AstroGIG Support: How can we help?')" aria-label="Open support chat">◌</button>
+<div class="toast" id="toast"></div>
+
+<!-- Login Modal -->
+<div class="modal" id="loginModal"><div class="modal-card"><div class="modal-head"><h2>Welcome Back</h2><button class="close" onclick="closeModal('loginModal')">×</button></div><div class="notice">Login to manage your bookings and account.</div><form onsubmit="login(event)"><div class="form-group"><label>Email Address</label><input type="email" required placeholder="you@example.com"></div><div class="form-group"><label>Password</label><input type="password" required placeholder="••••••••"></div><button class="primary" style="width:100%">LOGIN</button></form></div></div>
+
+<!-- Register Modal -->
+<div class="modal" id="registerModal"><div class="modal-card"><div class="modal-head"><h2>Create Account</h2><button class="close" onclick="closeModal('registerModal')">×</button></div><form onsubmit="register(event)"><div class="form-grid"><div class="form-group"><label>First Name</label><input required></div><div class="form-group"><label>Last Name</label><input required></div><div class="form-group"><label>Email</label><input type="email" required></div><div class="form-group"><label>Phone</label><input required placeholder="+231"></div><div class="form-group"><label>Password</label><input type="password" required></div><div class="form-group"><label>Account Type</label><select><option>Traveler</option><option>Hotel Manager</option></select></div></div><button class="primary" style="width:100%">CREATE ACCOUNT</button></form></div></div>
+
+<!-- Partner Modal -->
+<div class="modal" id="partnerModal"><div class="modal-card"><div class="modal-head"><h2>Become an AstroGIG Partner</h2><button class="close" onclick="closeModal('partnerModal')">×</button></div><div class="notice">Your application will be reviewed by AstroGIG before your hotel becomes publicly bookable.</div><form onsubmit="partnerApply(event)"><div class="form-grid"><div class="form-group"><label>Hotel Name</label><input id="pHotel" required></div><div class="form-group"><label>Owner / Manager</label><input required></div><div class="form-group"><label>Phone</label><input required placeholder="+231"></div><div class="form-group"><label>Email</label><input type="email" required></div><div class="form-group"><label>County</label><input required></div><div class="form-group"><label>City</label><input required></div><div class="form-group full"><label>Hotel Address</label><input required></div><div class="form-group full"><label>Hotel Description</label><textarea required></textarea></div><div class="form-group full"><label>Business / Registration Number</label><input required></div></div><button class="primary" style="width:100%">SUBMIT PARTNERSHIP APPLICATION</button></form></div></div>
+
+<!-- Booking Modal -->
+<div class="modal" id="bookingModal"><div class="modal-card"><div class="modal-head"><h2>Complete Your Booking</h2><button class="close" onclick="closeModal('bookingModal')">×</button></div><div id="bookingContent"></div><form onsubmit="confirmBooking(event)"><div class="form-grid"><div class="form-group"><label>Guest Name</label><input required></div><div class="form-group"><label>Email</label><input type="email" required></div><div class="form-group"><label>Check-in</label><input id="bookIn" type="date" required></div><div class="form-group"><label>Check-out</label><input id="bookOut" type="date" required></div><div class="form-group"><label>Guests</label><select><option>1 Guest</option><option selected>2 Guests</option><option>3 Guests</option><option>4 Guests</option></select></div><div class="form-group"><label>Rooms</label><select><option selected>1 Room</option><option>2 Rooms</option><option>3 Rooms</option></select></div></div><button class="primary" style="width:100%">CONFIRM BOOKING</button></form></div></div>
+
+<script>
+const hotels=[
+{name:"Royal Palm Hotel",location:"Monrovia, Montserrado County",rating:"4.8",reviews:124,price:85,tag:"Best Seller",img:"https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=900&q=80",amenities:["WiFi","Pool","Restaurant","AC"]},
+{name:"Mamba Point Hotel",location:"Monrovia, Montserrado County",rating:"4.6",reviews:98,price:110,tag:"Popular",img:"https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=80",amenities:["WiFi","Pool","Restaurant","AC"]},
+{name:"Bella Casa Hotel",location:"Paynesville, Montserrado",rating:"4.5",reviews:76,price:65,tag:"Great Value",img:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",amenities:["WiFi","Restaurant","AC","Parking"]},
+{name:"Elite Hotel & Suites",location:"Ganta, Nimba County",rating:"4.7",reviews:54,price:70,tag:"New",img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80",amenities:["WiFi","Restaurant","AC","Parking"]}
+];
+
+const grid=document.getElementById("hotelGrid");
+function renderHotels(list=hotels){
+ grid.innerHTML=list.map((h,i)=>`<article class="hotel-card">
+ <div class="hotel-img" style="background-image:url('${h.img}')"><span class="tag">${h.tag}</span><button class="heart" onclick="favorite(event,${i})">♡</button></div>
+ <div class="hotel-body"><h3>${h.name}</h3><div class="location">${h.location}</div><div class="rating">★ ${h.rating} <span>(${h.reviews} reviews)</span></div>
+ <div class="amenities">${h.amenities.map(x=>`<span>✓ ${x}</span>`).join("")}</div><div class="price">From <strong>$${h.price}</strong> / night</div>
+ <div class="card-actions"><button class="view" onclick="viewHotel(${i})">View Hotel</button><button class="book" onclick="bookHotel(${i})">Book Now</button></div></div></article>`).join("");
+}
+renderHotels();
+
+function openModal(id){document.getElementById(id).classList.add("show")}
+function closeModal(id){document.getElementById(id).classList.remove("show")}
+window.addEventListener("click",e=>document.querySelectorAll(".modal.show").forEach(m=>{if(e.target===m)m.classList.remove("show")}));
+
+function showToast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3000)}
+function favorite(e,i){e.stopPropagation();e.target.textContent=e.target.textContent==="♡"?"♥":"♡";showToast("Hotel saved to favorites")}
+function viewHotel(i){const h=hotels[i];document.getElementById("bookingContent").innerHTML=`<div class="notice"><b>${h.name}</b><br>${h.location}<br>★ ${h.rating} (${h.reviews} reviews)<br><br>Starting from <b>$${h.price}/night</b></div>`;openModal("bookingModal")}
+function bookHotel(i){const h=hotels[i];document.getElementById("bookingContent").innerHTML=`<div class="notice"><b>${h.name}</b> — ${h.location}<br>Room starting from <b>$${h.price}/night</b></div>`;openModal("bookingModal")}
+function confirmBooking(e){e.preventDefault();closeModal("bookingModal");const id="AGBL-"+new Date().getFullYear()+"-"+String(Math.floor(Math.random()*999999)).padStart(6,"0");showToast("Booking confirmed! ID: "+id)}
+function login(e){e.preventDefault();closeModal("loginModal");showToast("Login successful. Welcome to AstroGIG!")}
+function register(e){e.preventDefault();closeModal("registerModal");showToast("Account created successfully!")}
+function partnerApply(e){e.preventDefault();closeModal("partnerModal");showToast("Application submitted. Status: Pending Review")}
+
+document.getElementById("searchForm").addEventListener("submit",e=>{
+ e.preventDefault();const place=document.getElementById("destination").value.split(",")[0].toLowerCase();
+ const found=hotels.filter(h=>h.location.toLowerCase().includes(place));
+ document.getElementById("hotels").scrollIntoView({behavior:"smooth"});
+ setTimeout(()=>{renderHotels(found.length?found:hotels);showToast(found.length?`${found.length} hotel(s) found in ${place}`:"Showing featured hotels")},400);
+});
+
+const today=new Date();const tomorrow=new Date(today);tomorrow.setDate(today.getDate()+1);
+const fmt=d=>d.toISOString().split("T")[0];
+document.getElementById("checkin").value=fmt(today);document.getElementById("checkout").value=fmt(tomorrow);
+document.getElementById("bookIn").value=fmt(today);document.getElementById("bookOut").value=fmt(tomorrow);
+
+document.getElementById("themeBtn").addEventListener("click",()=>{
+ document.body.classList.toggle("dark");
+ if(document.body.classList.contains("dark")){
+   document.documentElement.style.setProperty("--bg","#071522");document.documentElement.style.setProperty("--text","#eef4fa");document.documentElement.style.setProperty("--white","#0d2238");document.documentElement.style.setProperty("--line","#29405a");
+   document.querySelectorAll(".hotel-card,.search-box,.modal-card,.trust").forEach(x=>x.style.background="#0d2238");
+   document.getElementById("themeBtn").textContent="☀";
+ }else location.reload();
+});
+</script>
+</body>
+</html>
